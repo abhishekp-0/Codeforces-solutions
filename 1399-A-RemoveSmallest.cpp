@@ -4,9 +4,9 @@ using namespace std;
 int main(){
     int t;
     cin>>t;
-
     while(t--){
-        int n,r=1;
+        string r="YES";
+        int n;
         cin>>n;
         int arr[n];
         for(int i=0;i<n;i++){
@@ -15,8 +15,11 @@ int main(){
 
         sort(arr,arr+n);
 
-        if(arr[n-1]==arr[0]){
-            r=n;
+        for(int i=0;i<n-1;i++){
+            if(arr[i+1]-arr[i]>1){
+                r="NO";
+                break;
+            }
         }
 
         cout<<r<<endl;
